@@ -1,0 +1,5546 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101014;
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Шапка */
+
+header {
+    background: #17171d;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 1px solid #292932;
+}
+
+header h1 {
+    color: #ffcc4d;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+nav a {
+    color: #c8c8d0;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc4d;
+}
+
+/* Главный экран */
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 35px 7%;
+}
+
+.hero {
+    min-height: 430px;
+    padding: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border-radius: 24px;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #593b7b 0,
+            transparent 35%
+        ),
+        linear-gradient(135deg, #242333, #17171e);
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-label,
+.section-label {
+    color: #ffcc4d;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero p {
+    color: #c2c2cd;
+    font-size: 16px;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #ffcc4d;
+    color: #17171d;
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #ffe08a;
+    transform: translateY(-2px);
+}
+
+.hero-decoration {
+    width: 230px;
+    height: 280px;
+    flex-shrink: 0;
+    border: 1px solid #ffffff25;
+    border-radius: 20px;
+    background: linear-gradient(
+        145deg,
+        #6d4c91,
+        #28263d,
+        #111118
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(5deg);
+}
+
+.hero-symbol {
+    font-size: 75px;
+    color: #ffcc4d;
+}
+
+.hero-caption {
+    margin-top: 15px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* Заголовки разделов */
+
+.popular-section,
+.genres-section {
+    margin-top: 65px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    font-size: 28px;
+    margin-top: 8px;
+}
+
+.text-link {
+    color: #ffcc4d;
+    font-size: 14px;
+}
+
+/* Карточки фильмов */
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.movie-card {
+    background: #191920;
+    border: 1px solid #292932;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+    border-color: #ffcc4d;
+}
+
+.movie-poster {
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+    background: #191920;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.movie-card:hover .movie-poster img {
+    transform: scale(1.04);
+}
+
+.poster-year {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    background: #000000a0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.poster-one {
+    background: linear-gradient(135deg, #25415b, #10131c);
+}
+
+.poster-two {
+    background: linear-gradient(135deg, #6c3c65, #19131e);
+}
+
+.poster-three {
+    background: linear-gradient(135deg, #8d454b, #251c2b);
+}
+
+.poster-year {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #00000070;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.poster-icon {
+    font-size: 85px;
+    color: #ffffff45;
+}
+
+.movie-info {
+    padding: 18px;
+}
+
+.movie-info h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.movie-info p {
+    color: #a6a6b2;
+    font-size: 13px;
+}
+
+/* Жанры */
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.genre-card {
+    background: #191920;
+    border: 1px solid #292932;
+    border-radius: 14px;
+    padding: 28px;
+    transition: 0.3s;
+}
+
+.genre-card:hover {
+    border-color: #ffcc4d;
+    background: #202027;
+}
+
+.genre-card span {
+    font-size: 30px;
+    color: #ffcc4d;
+}
+
+.genre-card h3 {
+    margin: 12px 0 5px;
+}
+
+.genre-card p {
+    color: #a6a6b2;
+    font-size: 13px;
+}
+
+/* Нижний блок */
+
+.about-banner {
+    margin-top: 65px;
+    padding: 45px;
+    background: #1b1b24;
+    border: 1px solid #292932;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.about-banner {
+    margin-top: 65px;
+    padding: 45px;
+    background: #1b1b24;
+    border: 1px solid #292932;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.about-banner > div {
+    width: 100%;
+}
+
+.about-banner h2 {
+    font-size: 30px;
+    margin: 12px 0;
+}
+
+.about-banner p {
+    color: #a6a6b2 !important;
+    font-size: 19px !important;
+    line-height: 1.8 !important;
+    text-align: justify !important;
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Подвал */
+
+footer {
+    margin-top: 50px;
+    padding: 25px;
+    text-align: center;
+    background: #17171d;
+    border-top: 1px solid #292932;
+    color: #92929e;
+    font-size: 13px;
+}
+
+/* Для телефона */
+
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    main {
+        padding: 20px 5%;
+    }
+
+    .hero {
+        padding: 35px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+
+    .movie-grid,
+    .genre-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+.hero-note {
+    display: inline-block;
+    color: #ffcc4d;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+/* Карточки фильмов и жанров — ссылки */
+
+.movie-card,
+.genre-card {
+    display: block;
+    color: inherit;
+    cursor: pointer;
+}
+
+.movie-card {
+    text-decoration: none;
+}
+
+.movie-card:hover h3,
+.genre-card:hover h3 {
+    color: #ffcc4d;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+    border-color: #ffcc4d;
+}
+
+.genre-card:hover {
+    transform: translateY(-4px);
+}
+
+.movie-card,
+.genre-card {
+    transition: 0.3s;
+}
+/* Страница каталога */
+
+.catalog-page {
+    padding: 30px 0;
+}
+
+.catalog-page h2 {
+    font-size: 34px;
+    margin-top: 10px;
+}
+
+.catalog-description {
+    color: #a6a6b2;
+    margin: 10px 0 30px;
+}
+
+/* Поиск */
+
+.search-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 35px;
+    max-width: 600px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #363640;
+    border-radius: 8px;
+    background: #191920;
+    color: white;
+    outline: none;
+}
+
+.search-form input:focus {
+    border-color: #ffcc4d;
+}
+
+.search-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #ffcc4d;
+    color: #17171d;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #ffe08a;
+}
+
+/* Сетка каталога */
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.catalog-grid .movie-poster {
+    height: 270px;
+    background: linear-gradient(135deg, #35304d, #17171d);
+    overflow: hidden;
+}
+
+.catalog-grid .movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.catalog-grid .movie-card {
+    text-decoration: none;
+}
+
+.empty-message {
+    color: #a6a6b2;
+    padding: 20px 0;
+}
+
+@media (max-width: 800px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+}
+/* Заголовок каталога */
+
+.catalog-page {
+    padding: 30px 0;
+}
+
+.catalog-heading {
+    margin-bottom: 30px;
+}
+
+.catalog-heading h2 {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.catalog-description {
+    color: #a6a6b2;
+    margin-top: 10px;
+}
+
+.catalog-count {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 8px 16px;
+    background: #202027;
+    border: 1px solid #363640;
+    border-radius: 8px;
+    color: #c2c2cd;
+    font-size: 13px;
+}
+
+.catalog-count strong {
+    color: #ffcc4d;
+}
+
+/* Поиск */
+
+.catalog-controls {
+    margin-bottom: 25px;
+}
+
+.search-form {
+    display: flex;
+    gap: 12px;
+    max-width: 650px;
+}
+
+.search-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid #363640;
+    border-radius: 8px;
+    background: #191920;
+    color: white;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-form input:focus {
+    border-color: #ffcc4d;
+}
+
+.search-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #ffcc4d;
+    color: #17171d;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-form button:hover {
+    background: #ffe08a;
+}
+
+/* Фильтры жанров */
+
+.genre-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.genre-filter {
+    padding: 9px 17px;
+    border: 1px solid #363640;
+    border-radius: 20px;
+    background: #191920;
+    color: #c2c2cd;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.genre-filter:hover,
+.genre-filter.active {
+    background: #ffcc4d;
+    color: #17171d;
+    border-color: #ffcc4d;
+}
+
+/* Сортировка */
+
+.catalog-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 30px 0 20px;
+    color: #a6a6b2;
+    font-size: 14px;
+}
+
+.catalog-toolbar form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.catalog-toolbar select {
+    padding: 10px 13px;
+    border: 1px solid #363640;
+    border-radius: 8px;
+    background: #191920;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Карточки каталога */
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.catalog-grid .movie-card {
+    display: block;
+    overflow: hidden;
+    background: #191920;
+    border: 1px solid #292932;
+    border-radius: 14px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.catalog-grid .movie-card:hover {
+    transform: translateY(-6px);
+    border-color: #ffcc4d;
+}
+
+.catalog-grid .movie-poster {
+    height: 290px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #35304d, #17171d);
+}
+
+.catalog-grid .movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.catalog-grid .movie-card:hover .movie-poster img {
+    transform: scale(1.05);
+}
+
+.catalog-grid .poster-icon {
+    color: #ffcc4d;
+    font-size: 55px;
+}
+
+.catalog-grid .poster-year {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    background: #101014cc;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+}
+
+.catalog-grid .movie-info {
+    padding: 18px;
+}
+
+.catalog-grid .movie-info h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.catalog-grid .movie-info p {
+    color: #a6a6b2;
+    font-size: 13px;
+}
+
+/* Если фильмы не найдены */
+
+.empty-message {
+    grid-column: 1 / -1;
+    padding: 50px 20px;
+    text-align: center;
+    background: #191920;
+    border: 1px solid #292932;
+    border-radius: 14px;
+}
+
+.empty-message h3 {
+    margin-bottom: 10px;
+}
+
+.empty-message p {
+    color: #a6a6b2;
+    margin-bottom: 25px;
+}
+
+/* Номера страниц */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.pagination a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #363640;
+    border-radius: 8px;
+    background: #191920;
+    color: white;
+    transition: 0.3s;
+}
+
+.pagination a:hover,
+.pagination a.active {
+    background: #ffcc4d;
+    color: #17171d;
+    border-color: #ffcc4d;
+}
+
+/* Адаптация */
+
+@media (max-width: 800px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .catalog-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 550px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-heading h2 {
+        font-size: 28px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+}
+/* Страница жанров */
+
+.genres-page {
+    padding: 35px 0 60px;
+}
+
+.genres-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.genres-heading h2,
+.genre-results-heading h2 {
+    font-size: 38px;
+    margin: 12px 0;
+}
+
+.genres-heading p,
+.genre-results-heading p {
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Сетка жанров */
+
+.genres-catalog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.genre-detail-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 150px;
+    padding: 25px;
+    background: #1b1b24;
+    border: 1px solid #30303b;
+    border-radius: 16px;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.genre-detail-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffcc4d;
+    background: #22222d;
+}
+
+.genre-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 65px;
+    height: 65px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #5541a5, #30265f);
+    color: #ffcc4d;
+    font-size: 30px;
+}
+
+.genre-card-content {
+    flex: 1;
+}
+
+.genre-card-content h3 {
+    font-size: 21px;
+    margin: 0 0 8px;
+}
+
+.genre-card-content p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+}
+
+.genre-film-count {
+    color: #ffcc4d;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.genre-arrow {
+    color: #ffcc4d;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.genre-detail-card:hover .genre-arrow {
+    transform: translateX(5px);
+}
+
+/* Страница выбранного жанра */
+
+.genre-results-heading {
+    margin-bottom: 35px;
+}
+
+.genre-results-heading h2 {
+    margin-top: 12px;
+}
+
+.back-to-genres {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 11px 18px;
+    border: 1px solid #ffcc4d;
+    border-radius: 8px;
+    color: #ffcc4d;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-to-genres:hover {
+    background: #ffcc4d;
+    color: #17171d;
+}
+
+/* Заглушка вместо отсутствующего постера */
+
+.poster-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #ffcc4d;
+    font-size: 45px;
+    background: linear-gradient(135deg, #39305e, #17171d);
+}
+
+/* Адаптация для телефона */
+
+@media (max-width: 800px) {
+    .genres-catalog {
+        grid-template-columns: 1fr;
+    }
+
+    .genres-heading h2,
+    .genre-results-heading h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .genre-detail-card {
+        padding: 18px;
+        gap: 13px;
+    }
+
+    .genre-card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .genre-card-content h3 {
+        font-size: 18px;
+    }
+}
+/* Страница О нас */
+
+.about-page {
+    padding: 30px 0 60px;
+}
+
+/* Главный блок */
+
+.about-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 65px;
+    min-height: 350px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #29204f, #17171d 75%);
+    overflow: hidden;
+}
+
+.about-hero-content {
+    max-width: 650px;
+}
+
+.about-hero h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 18px 0;
+}
+
+.about-hero p {
+    color: #c2c0cc;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.about-hero-decoration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 240px;
+    height: 240px;
+    border: 2px solid rgba(255, 204, 77, 0.35);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.about-hero-decoration span {
+    color: #ffcc4d;
+    font-size: 85px;
+}
+
+.about-hero-decoration p {
+    color: #ffcc4d;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* О проекте */
+
+.about-intro {
+    max-width: 850px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.about-intro h2 {
+    font-size: 34px;
+    margin: 15px 0 25px;
+}
+
+.about-intro p {
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+/* Возможности сайта */
+
+.about-features {
+    margin-bottom: 80px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.feature-card {
+    padding: 28px 22px;
+    background: #1b1b24;
+    border: 1px solid #30303b;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffcc4d;
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 20px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #5541a5, #30265f);
+    color: #ffcc4d;
+    font-size: 27px;
+}
+
+.feature-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Цель проекта */
+
+.about-mission {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 50px;
+    border-radius: 18px;
+    background: #1b1b24;
+    border: 1px solid #30303b;
+}
+
+.mission-content {
+    max-width: 700px;
+}
+
+.mission-content h2 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin: 15px 0;
+}
+
+.mission-content p {
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/* Нижний блок */
+
+.about-bottom {
+    margin-top: 65px;
+    padding: 55px 25px;
+    text-align: center;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #30265f, #493477);
+}
+
+.about-bottom h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.about-bottom p {
+    color: #d0cbdc;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+/* Адаптация */
+
+@media (max-width: 1000px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-hero {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 35px 25px;
+    }
+
+    .about-hero h2 {
+        font-size: 32px;
+    }
+
+    .about-hero-decoration {
+        width: 100%;
+        align-self: stretch;
+    }
+
+    .about-intro {
+        margin: 55px auto;
+    }
+
+    .about-intro h2 {
+        font-size: 28px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-mission {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+    }
+
+    .mission-content h2 {
+        font-size: 27px;
+    }
+
+    .about-bottom h2 {
+        font-size: 25px;
+    }
+}
+
+/* Карточки в главном блоке */
+
+.about-hero-decoration {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 330px;
+    flex-shrink: 0;
+}
+
+.about-mini-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 13px;
+    transition: 0.3s;
+}
+
+.about-mini-card:hover {
+    transform: translateX(-5px);
+    border-color: #ffcc4d;
+}
+
+.about-mini-card.highlighted {
+    background: rgba(255, 204, 77, 0.12);
+    border-color: rgba(255, 204, 77, 0.4);
+}
+
+.mini-number {
+    color: #ffcc4d;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.about-mini-card h3 {
+    font-size: 22px !important;
+}
+
+.about-mini-card p {
+    font-size: 17px !important;
+}
+/* Страница контактов */
+
+.contacts-page {
+    padding: 35px 0 60px;
+}
+
+/* Верхний блок */
+
+.contacts-hero {
+    padding: 55px 40px;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #29204f, #17171d);
+}
+
+.contacts-hero h2 {
+    font-size: 38px;
+    margin: 18px 0;
+}
+
+.contacts-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #c2c0cc;
+    line-height: 1.8;
+}
+
+/* Основная часть */
+
+.contacts-content {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 50px;
+    margin: 65px 0;
+    align-items: start;
+}
+
+/* Информация */
+
+.contacts-info {
+    padding: 15px 0;
+}
+
+.contacts-info h2 {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.contacts-description {
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 55px;
+    height: 55px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #5541a5, #30265f);
+    color: #ffcc4d;
+    font-size: 24px;
+}
+
+.contact-item h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.contact-item p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Форма обратной связи */
+
+.contact-form-block {
+    padding: 35px;
+    background: #1b1b24;
+    border: 1px solid #30303b;
+    border-radius: 17px;
+}
+
+.contact-form-block h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.contact-form-block > p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.contact-form-block form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-block label {
+    margin: 15px 0 8px;
+    font-size: 14px;
+    color: #e5e5e5;
+}
+
+.contact-form-block input,
+.contact-form-block textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #393943;
+    border-radius: 9px;
+    outline: none;
+    background: #121219;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.contact-form-block input:focus,
+.contact-form-block textarea:focus {
+    border-color: #ffcc4d;
+}
+
+.contact-form-block textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.contact-form-block input::placeholder,
+.contact-form-block textarea::placeholder {
+    color: #777;
+}
+
+.contact-submit {
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 9px;
+    background: #ffcc4d;
+    color: #17171d;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-submit:hover {
+    background: #f0b928;
+    transform: translateY(-2px);
+}
+
+/* Сообщения об отправке */
+
+.form-success {
+    padding: 13px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #39865a;
+    border-radius: 9px;
+    background: rgba(57, 134, 90, 0.15);
+    color: #83dfa4;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.form-error {
+    padding: 13px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #a94444;
+    border-radius: 9px;
+    background: rgba(169, 68, 68, 0.15);
+    color: #ff9999;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* Нижний блок */
+
+.contacts-bottom {
+    padding: 50px 25px;
+    text-align: center;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #30265f, #493477);
+}
+
+.contacts-bottom h2 {
+    font-size: 29px;
+    margin-bottom: 15px;
+}
+
+.contacts-bottom p {
+    color: #d0cbdc;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+/* Адаптация */
+
+@media (max-width: 850px) {
+    .contacts-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contacts-info {
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .contacts-hero {
+        padding: 40px 22px;
+    }
+
+    .contacts-hero h2 {
+        font-size: 29px;
+    }
+
+    .contact-form-block {
+        padding: 25px 20px;
+    }
+
+    .contacts-bottom h2 {
+        font-size: 24px;
+    }
+}
+/* Личный кабинет */
+
+.account-page {
+    padding: 35px 0 60px;
+}
+
+.account-welcome {
+    padding: 40px;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #29204f, #17171d);
+}
+
+.account-welcome h2 {
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.account-welcome p {
+    color: #c2c0cc;
+    line-height: 1.7;
+}
+
+.account-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px 0 50px;
+}
+
+.account-info > div {
+    padding: 25px;
+    border-radius: 13px;
+    background: #1b1b24;
+    border: 1px solid #30303b;
+}
+
+.account-label {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.account-info h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+.account-section {
+    margin-bottom: 50px;
+}
+
+.account-section h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.notification-card {
+    padding: 22px;
+    margin-bottom: 15px;
+    border-radius: 13px;
+    background: #1b1b24;
+    border: 1px solid #30303b;
+}
+
+.notification-card h3 {
+    color: #ffcc4d;
+    margin-bottom: 10px;
+}
+
+.notification-card p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.notification-card span {
+    display: block;
+    margin-top: 12px;
+    color: #888;
+    font-size: 12px;
+}
+
+.notification-card a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #ffcc4d;
+    text-decoration: none;
+}
+
+.account-empty {
+    padding: 20px;
+    border-radius: 12px;
+    background: #1b1b24;
+    color: #aaa;
+}
+
+.account-logout {
+    display: inline-block;
+    padding: 13px 22px;
+    border: 1px solid #ffcc4d;
+    border-radius: 8px;
+    color: #ffcc4d;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.account-logout:hover {
+    background: #ffcc4d;
+    color: #17171d;
+}
+
+@media (max-width: 650px) {
+    .account-info {
+        grid-template-columns: 1fr;
+    }
+
+    .account-welcome {
+        padding: 30px 22px;
+    }
+
+    .account-welcome h2 {
+        font-size: 26px;
+    }
+}
+/* Новая страница регистрации */
+
+.register-page {
+    padding: 45px 0 65px;
+}
+
+.register-layout {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 45px;
+    align-items: center;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 45px;
+    background: linear-gradient(135deg, #201d30, #17171e 65%);
+    border: 1px solid #34303f;
+    border-radius: 22px;
+}
+
+/* Левая часть */
+
+.register-intro {
+    padding: 15px 10px;
+}
+
+.register-label {
+    color: #ffcc4d;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.register-intro h2 {
+    margin: 22px 0;
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.register-intro h2 span {
+    display: block;
+    color: #b69ae9;
+}
+
+.register-intro-text {
+    max-width: 410px;
+    color: #aaa8b7;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.register-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.register-benefit {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #59418a, #30264f);
+    color: #ffcc4d;
+    font-size: 21px;
+}
+
+.register-benefit h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.register-benefit p {
+    color: #9997a7;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.register-quote {
+    margin-top: 38px;
+    padding-top: 20px;
+    border-top: 1px solid #373343;
+    color: #aaa8b7;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.register-quote span {
+    color: #ffcc4d;
+    font-size: 25px;
+    margin-right: 7px;
+}
+
+/* Правая часть — форма */
+
+.register-form-block {
+    padding: 32px;
+    background: #191920;
+    border: 1px solid #34303f;
+    border-radius: 17px;
+}
+
+.register-form-heading {
+    margin-bottom: 25px;
+}
+
+.register-form-heading h2 {
+    font-size: 27px;
+    margin: 12px 0 8px;
+}
+
+.register-form-heading p {
+    color: #9997a7;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Поля */
+
+.register-field {
+    margin-bottom: 17px;
+}
+
+.register-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e5e5e5;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.register-field input {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #383842;
+    border-radius: 9px;
+    outline: none;
+    background: #121219;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.register-field input::placeholder {
+    color: #777783;
+}
+
+.register-field input:focus {
+    border-color: #9473d1;
+    box-shadow: 0 0 0 3px rgba(148, 115, 209, 0.12);
+}
+
+/* Кнопка */
+
+.register-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 9px;
+    background: #ffcc4d;
+    color: #17171d;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-submit:hover {
+    background: #ffe08a;
+    transform: translateY(-2px);
+}
+
+.register-submit span {
+    font-size: 20px;
+}
+
+/* Ошибки */
+
+.register-error {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border: 1px solid #a94444;
+    border-radius: 9px;
+    background: rgba(169, 68, 68, 0.15);
+    color: #ff9999;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Переход ко входу */
+
+.register-login-link {
+    margin-top: 23px;
+    text-align: center;
+    color: #9997a7;
+    font-size: 13px;
+}
+
+.register-login-link a {
+    color: #ffcc4d;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.register-login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптация */
+
+@media (max-width: 850px) {
+    .register-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .register-intro {
+        padding: 10px;
+    }
+
+    .register-intro h2 {
+        font-size: 34px;
+    }
+
+    .register-quote {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .register-page {
+        padding: 20px 0 40px;
+    }
+
+    .register-layout {
+        padding: 18px;
+        gap: 20px;
+    }
+
+    .register-form-block {
+        padding: 22px 17px;
+    }
+
+    .register-intro h2 {
+        font-size: 30px;
+    }
+
+    .register-form-heading h2 {
+        font-size: 23px;
+    }
+}
+/* Форма авторизации */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 450px;
+    margin-top: 25px;
+}
+
+.auth-form label {
+    color: #f1f1f1;
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 13px 15px;
+    box-sizing: border-box;
+    background: #1c1c24;
+    border: 1px solid #383844;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.auth-form input:focus {
+    border-color: #ffbd35;
+}
+
+.auth-form button {
+    padding: 13px;
+    background: #ffbd35;
+    color: #17171d;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-form button:hover {
+    background: #ffd16b;
+}
+
+.auth-form a {
+    color: #ffbd35;
+    text-decoration: none;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}
+/* Красивые вертикальные постеры на главной */
+
+.movie-grid .movie-poster {
+    height: auto;
+    aspect-ratio: 2 / 3;
+    position: relative;
+    overflow: hidden;
+    background: #191920;
+}
+
+.movie-grid .movie-poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.movie-grid .movie-card:hover .movie-poster img {
+    transform: scale(1.04);
+}
+/* Постеры популярных фильмов */
+
+.movie-grid .movie-poster {
+    height: auto;
+    aspect-ratio: 2 / 3;
+    position: relative;
+    overflow: hidden;
+    background: #191920;
+}
+
+.movie-grid .movie-poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.movie-grid .movie-card:hover .movie-poster img {
+    transform: scale(1.04);
+}
+/* Исправление изображений популярных фильмов */
+
+.movie-grid .movie-card {
+    display: block;
+    overflow: hidden;
+}
+
+.movie-grid .movie-poster {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 360px;
+    aspect-ratio: auto;
+    overflow: hidden;
+    background: #191920;
+}
+
+.movie-grid .movie-poster img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.movie-grid .movie-card:hover .movie-poster img {
+    transform: scale(1.04);
+}
+
+.movie-grid .poster-year {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+}
+
+.movie-grid .movie-info {
+    position: relative;
+    padding: 18px;
+    background: #191920;
+}
+/* Избранное */
+
+.movie-card {
+    position: relative;
+}
+
+.favorite-form {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 5;
+}
+
+.favorite-button {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ffffff35;
+    border-radius: 50%;
+    background: #17171dcc;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.favorite-button:hover {
+    background: #ffcc4d;
+    color: #17171d;
+    transform: scale(1.1);
+}
+
+.favorite-button.active {
+    background: #ffcc4d;
+    color: #17171d;
+    border-color: #ffcc4d;
+}
+/* Сердечки избранного в каталоге */
+
+.catalog-grid .movie-card {
+    position: relative;
+}
+
+.movie-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.favorite-form {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    z-index: 10;
+    margin: 0;
+}
+
+.favorite-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    background: rgba(16,16,20,0.85);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.favorite-button:hover {
+    background: #ffcc4d;
+    color: #17171d;
+    transform: scale(1.1);
+}
+
+.favorite-button.active {
+    background: #ffcc4d;
+    color: #17171d;
+    border-color: #ffcc4d;
+}
+
+.favorite-button.active:hover {
+    background: #eeb936;
+}
+
+/* Страница отдельного фильма */
+
+.film-page {
+    padding: 30px 0 60px;
+}
+
+.film-back {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #ffcc4d;
+    transition: 0.3s;
+}
+
+.film-back:hover {
+    transform: translateX(-5px);
+}
+
+.film-details {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    gap: 45px;
+    padding: 35px;
+    background: #191920;
+    border: 1px solid #30303b;
+    border-radius: 18px;
+}
+
+.film-poster-large {
+    height: 470px;
+    overflow: hidden;
+    border-radius: 13px;
+    background: #242333;
+}
+
+.film-poster-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.film-content {
+    padding: 15px 0;
+}
+
+.film-content h2 {
+    margin: 15px 0;
+    font-size: 36px;
+}
+
+.film-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0 35px;
+}
+
+.film-meta span {
+    padding: 8px 15px;
+    border-radius: 7px;
+    background: #292932;
+    color: #ffcc4d;
+    font-size: 13px;
+}
+
+.film-description h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.film-description p {
+    color: #b5b5c0;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+@media (max-width: 750px) {
+    .film-details {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .film-poster-large {
+        height: 400px;
+    }
+
+    .film-content h2 {
+        font-size: 28px;
+    }
+}
+/* Страница авторизации */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 650px;
+    padding: 50px 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 45px;
+    background: linear-gradient(145deg, #201d30, #191920);
+    border: 1px solid #34303f;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+.login-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 22px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #59418a, #30264f);
+    color: #ffcc4d;
+    font-size: 30px;
+}
+
+.login-card .section-label {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.login-card h2 {
+    margin-bottom: 12px;
+    font-size: 32px;
+    color: #fff;
+}
+
+.login-description {
+    margin-bottom: 28px;
+    color: #aaa8b7;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-card form label {
+    margin-top: 8px;
+    color: #e5e5e5;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login-card form input {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #383842;
+    border-radius: 9px;
+    outline: none;
+    background: #121219;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.login-card form input::placeholder {
+    color: #777783;
+}
+
+.login-card form input:focus {
+    border-color: #ffcc4d;
+    box-shadow: 0 0 0 3px rgba(255, 204, 77, 0.1);
+}
+
+.login-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 9px;
+    background: #ffcc4d;
+    color: #17171d;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    background: #ffe08a;
+    transform: translateY(-2px);
+}
+
+.login-back {
+    display: block;
+    margin-top: 25px;
+    color: #ffcc4d;
+    text-align: center;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.login-back:hover {
+    color: #ffe08a;
+    text-decoration: underline;
+}
+
+.login-error {
+    margin-bottom: 20px;
+    padding: 13px 15px;
+    border: 1px solid #a94444;
+    border-radius: 9px;
+    background: rgba(169, 68, 68, 0.15);
+    color: #ff9999;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (max-width: 550px) {
+    .login-page {
+        padding: 30px 10px;
+        min-height: 550px;
+    }
+
+    .login-card {
+        padding: 28px 22px;
+    }
+
+    .login-card h2 {
+        font-size: 27px;
+    }
+}
+
+/* =====================================
+   ОБЩЕЕ УВЕЛИЧЕНИЕ ТЕКСТА НА САЙТЕ
+===================================== */
+
+/* ШАПКА */
+
+header {
+    min-height: 100px;
+    padding: 28px 7%;
+}
+
+header h1 {
+    font-size: 36px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.5px;
+}
+
+nav {
+    gap: 30px;
+}
+
+nav a {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: #e0e0e8;
+}
+
+nav a:hover {
+    color: #ffcc4d;
+}
+
+/* ОСНОВНЫЕ ЗАГОЛОВКИ */
+
+.hero h2 {
+    font-size: 46px;
+    font-weight: 800;
+}
+
+.section-heading h2 {
+    font-size: 31px;
+    font-weight: 700;
+}
+
+.catalog-heading h2,
+.catalog-page h2 {
+    font-weight: 800;
+}
+
+.genres-heading h2,
+.genre-results-heading h2,
+.about-intro h2,
+.contacts-hero h2 {
+    font-weight: 800;
+}
+
+/* ГЛАВНАЯ СТРАНИЦА */
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.text-link {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.movie-info h3 {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.movie-info p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.genre-card h3 {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.genre-card p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* КАТАЛОГ */
+
+.catalog-description {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.catalog-grid .movie-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.catalog-grid .movie-info p {
+    font-size: 15px;
+}
+
+.genre-filter {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.catalog-toolbar {
+    font-size: 15px;
+}
+
+.search-form input,
+.search-form button {
+    font-size: 15px;
+}
+
+/* ЖАНРЫ */
+
+.genres-heading p,
+.genre-results-heading p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.genre-card-content h3 {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.genre-card-content p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.genre-film-count {
+    font-size: 14px;
+}
+
+/* О НАС */
+
+.about-hero h2 {
+    font-size: 45px;
+    font-weight: 800;
+}
+
+.about-hero p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.about-intro p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.mission-content p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.about-bottom p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* КОНТАКТЫ */
+
+.contacts-hero p,
+.contacts-description {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.contacts-info h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.contact-item h3 {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.contact-item p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.contact-form-block h2 {
+    font-size: 29px;
+}
+
+.contact-form-block > p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.contact-form-block label {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.contact-form-block input,
+.contact-form-block textarea {
+    font-size: 15px;
+}
+
+/* ЛИЧНЫЙ КАБИНЕТ */
+
+.account-welcome h2 {
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.account-welcome p {
+    font-size: 17px;
+}
+
+.account-section h2 {
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.account-info h3 {
+    font-size: 20px;
+}
+
+.notification-card h3 {
+    font-size: 19px;
+}
+
+.notification-card p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* РЕГИСТРАЦИЯ И ВХОД */
+
+.register-intro h2 {
+    font-size: 45px;
+    font-weight: 800;
+}
+
+.register-intro-text {
+    font-size: 17px;
+}
+
+.register-benefit h3 {
+    font-size: 17px;
+}
+
+.register-benefit p {
+    font-size: 14px;
+}
+
+.register-form-heading h2 {
+    font-size: 29px;
+}
+
+.register-field label,
+.login-card form label {
+    font-size: 15px;
+}
+
+.register-field input,
+.login-card form input {
+    font-size: 15px;
+}
+
+.login-card h2 {
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.login-description {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* СТРАНИЦА ФИЛЬМА */
+
+.film-content h2 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.film-meta span {
+    font-size: 15px;
+}
+
+.film-description h3 {
+    font-size: 23px;
+}
+
+.film-description p {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.film-back {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* КНОПКИ */
+
+.btn-primary,
+.search-form button,
+.contact-submit,
+.register-submit,
+.login-button {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* ПОДВАЛ */
+
+footer {
+    font-size: 14px;
+}
+
+/* АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ */
+
+@media (max-width: 800px) {
+    header {
+        padding: 23px 5%;
+    }
+
+    header h1 {
+        font-size: 32px !important;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 15px !important;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .about-hero h2,
+    .register-intro h2 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 550px) {
+    nav {
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 14px !important;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .film-content h2 {
+        font-size: 30px;
+    }
+}
+/* =====================================
+   ОБЩЕЕ ОФОРМЛЕНИЕ ШАПКИ САЙТА
+===================================== */
+
+header {
+    min-height: 105px !important;
+    padding: 25px 7% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 30px !important;
+    box-sizing: border-box !important;
+}
+
+header h1 {
+    font-size: 36px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.5px !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+}
+
+header nav {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 28px !important;
+}
+
+header nav a {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: #e0e0e8 !important;
+    text-decoration: none !important;
+    transition: 0.3s !important;
+}
+
+header nav a:hover {
+    color: #ffcc4d !important;
+}
+
+/* Адаптация для небольших экранов */
+
+@media (max-width: 800px) {
+    header {
+        flex-direction: column !important;
+        padding: 22px 5% !important;
+    }
+
+    header nav {
+        justify-content: center !important;
+        gap: 18px !important;
+    }
+}
+
+@media (max-width: 550px) {
+    header h1 {
+        font-size: 30px !important;
+    }
+
+    header nav a {
+        font-size: 15px !important;
+    }
+}
+/* Текст «Кино объединяет людей» на главной */
+
+.hero p,
+.hero-description,
+.hero-text {
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+    max-width: 900px !important;
+    width: 100% !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+    margin: 15px auto !important;
+}
+/* Увеличение текста на главной странице */
+body:has(.about-banner) h1 {
+    font-size: 38px !important;
+}
+
+body:has(.about-banner) h2 {
+    font-size: 30px !important;
+}
+
+body:has(.about-banner) h3 {
+    font-size: 24px !important;
+}
+
+body:has(.about-banner) p {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+}
+
+body:has(.about-banner) .section-label {
+    font-size: 14px !important;
+}
+
+body:has(.about-banner) .about-banner p {
+    font-size: 19px !important;
+    max-width: 100% !important;
+}
+
+body:has(.about-banner) a {
+    font-size: 17px;
+}
+
+body:has(.about-banner) button {
+    font-size: 17px !important;
+}
+
+/* Текст в карточках и блоках главной */
+body:has(.about-banner) .film-card,
+body:has(.about-banner) .genre-card {
+    font-size: 17px !important;
+}
+
+body:has(.about-banner) .film-card p,
+body:has(.about-banner) .genre-card p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+/* =================================
+   ОБНОВЛЁННЫЙ ЛИЧНЫЙ КАБИНЕТ
+================================= */
+
+.account-page {
+    padding: 45px 0 70px;
+}
+
+.account-welcome {
+    position: relative;
+    padding: 50px;
+    border: 1px solid #493b68;
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at 90% 20%, #493477 0, transparent 40%),
+        linear-gradient(120deg, #29204f, #17171d);
+}
+
+.account-welcome h2 {
+    font-size: 36px !important;
+    margin: 18px 0;
+}
+
+.account-welcome p {
+    font-size: 18px !important;
+    color: #d0cbdc;
+}
+
+.account-info {
+    gap: 25px;
+    margin: 30px 0 55px;
+}
+
+.account-info > div {
+    padding: 30px;
+    background: linear-gradient(145deg, #22212e, #191920);
+    border: 1px solid #393344;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.account-info > div:hover {
+    transform: translateY(-4px);
+    border-color: #ffcc4d;
+}
+
+.account-label {
+    font-size: 15px !important;
+    color: #aaa8b7;
+}
+
+.account-info h3 {
+    font-size: 22px !important;
+    color: #ffcc4d;
+}
+
+.account-section {
+    margin-bottom: 55px;
+}
+
+.account-section h2 {
+    font-size: 30px !important;
+    margin-bottom: 25px;
+}
+
+.notification-card {
+    padding: 27px;
+    margin-bottom: 18px;
+    background: linear-gradient(145deg, #22212e, #191920);
+    border: 1px solid #393344;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.notification-card:hover {
+    border-color: #8063b5;
+    transform: translateY(-3px);
+}
+
+.notification-card h3 {
+    font-size: 21px !important;
+    margin-bottom: 12px;
+}
+
+.notification-card p {
+    font-size: 17px !important;
+}
+
+.notification-card span {
+    font-size: 14px !important;
+}
+
+.notification-card a {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.account-empty {
+    padding: 25px;
+    font-size: 17px;
+    border: 1px dashed #49415c;
+    border-radius: 14px;
+}
+
+.account-logout {
+    padding: 15px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #25202f;
+}
+
+.account-logout:hover {
+    background: #ffcc4d;
+}
+
+@media (max-width: 650px) {
+    .account-welcome {
+        padding: 30px 22px;
+    }
+
+    .account-welcome h2 {
+        font-size: 27px !important;
+    }
+}
+/* Более компактные карточки фильмов */
+.catalog-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+    max-width: 1100px;
+    margin: 25px auto;
+}
+
+/* Карточка фильма */
+.movie-card {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 13px;
+}
+
+/* Вертикальные постеры */
+.movie-poster {
+    height: auto !important;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block;
+}
+
+/* Информация о фильме */
+.movie-info {
+    padding: 15px !important;
+}
+
+.movie-info h3 {
+    font-size: 18px !important;
+}
+
+.movie-info p {
+    font-size: 15px !important;
+}
+
+/* Адаптация под размер экрана */
+@media (max-width: 900px) {
+    .catalog-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 13px !important;
+    }
+}
+
+/* ПОДРОБНАЯ СТРАНИЦА ФИЛЬМА */
+
+.film-page {
+    padding: 35px 0 60px;
+}
+
+.film-back {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #ffcc4d;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.film-back:hover {
+    color: #ffe08a;
+    transform: translateX(-4px);
+}
+
+.film-details {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 40px;
+    padding: 32px;
+    background: #191920;
+    border: 1px solid #30303b;
+    border-radius: 18px;
+    align-items: start;
+}
+
+.film-poster-large {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #24242d;
+}
+
+.film-poster-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.film-poster-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #ffcc4d;
+    font-size: 60px;
+}
+
+.film-content {
+    min-width: 0;
+}
+
+.film-content > h1 {
+    margin: 15px 0 20px;
+    color: #fff;
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.film-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.film-meta span {
+    padding: 9px 15px;
+    border-radius: 7px;
+    background: #292932;
+    color: #ffcc4d;
+    font-size: 15px;
+}
+
+.film-rating {
+    margin: 10px 0 25px;
+    color: #ffcc4d;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.film-description {
+    margin-top: 25px;
+}
+
+.film-description h2,
+.film-extra h2,
+.film-trailer h2 {
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 23px;
+}
+
+.film-description p {
+    color: #c2c2cd;
+    font-size: 17px;
+    line-height: 1.85;
+    white-space: normal;
+}
+
+.film-extra {
+    margin-top: 30px;
+    padding: 23px;
+    border: 1px solid #30303b;
+    border-radius: 12px;
+    background: #202027;
+}
+
+.film-extra-row {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #363640;
+    font-size: 16px;
+}
+
+.film-extra-row:last-child {
+    border-bottom: none;
+}
+
+.film-extra-row span {
+    color: #a6a6b2;
+}
+
+.film-extra-row strong {
+    color: #f5f5f5;
+    font-weight: 600;
+}
+
+.film-trailer {
+    margin-top: 30px;
+}
+
+.film-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+.film-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.film-trailer-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 23px;
+    border-radius: 9px;
+    background: #ffcc4d;
+    color: #17171d;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.film-trailer-button:hover {
+    background: #ffe08a;
+}
+
+@media (max-width: 750px) {
+    .film-details {
+        grid-template-columns: 1fr;
+        padding: 22px;
+        gap: 25px;
+    }
+
+    .film-poster-large {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .film-content > h1 {
+        font-size: 30px;
+    }
+
+    .film-extra-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+}
+
+/* ОБНОВЛЁННАЯ СТРАНИЦА ФИЛЬМА */
+
+.film-page {
+    padding: 25px 0 65px;
+}
+
+.film-back {
+    display: inline-block;
+    margin-bottom: 22px;
+    color: #ffcc4d;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.film-back:hover {
+    color: #ffffff;
+    transform: translateX(-4px);
+}
+
+.film-details {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 38px;
+    align-items: start;
+    padding: 32px;
+    background: #191920;
+    border: 1px solid #30303b;
+    border-radius: 18px;
+}
+
+.film-poster-large {
+    width: 100%;
+    position: sticky;
+    top: 25px;
+}
+
+.film-poster-large img {
+    display: block;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+.film-poster-placeholder {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #292932;
+    color: #ffcc4d;
+    font-size: 55px;
+    border-radius: 13px;
+}
+
+.film-content {
+    min-width: 0;
+}
+
+.film-content > .section-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffcc4d;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.film-content h1 {
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.film-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.film-meta span {
+    padding: 9px 15px;
+    background: #292932;
+    border-radius: 7px;
+    color: #ffcc4d;
+    font-size: 14px;
+}
+
+.film-rating {
+    margin: 12px 0 24px;
+    color: #ffcc4d;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.film-rating span {
+    font-size: 23px;
+}
+
+/* Заголовки разделов */
+
+.film-description h2,
+.film-extra h2,
+.film-trailer h2 {
+    margin: 0 0 17px;
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 1.3;
+}
+
+/* Характеристики фильма */
+
+.film-extra {
+    margin-top: 25px;
+    padding: 22px;
+    background: #202029;
+    border: 1px solid #33333e;
+    border-radius: 12px;
+}
+
+.film-extra-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.film-extra-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid #383843;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.film-extra-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.film-extra-row span {
+    flex-shrink: 0;
+    color: #a6a6b2;
+}
+
+.film-extra-row strong {
+    color: #ffffff;
+    text-align: right;
+    font-weight: 600;
+}
+
+/* Описание */
+
+.film-description {
+    margin-top: 28px;
+}
+
+.film-description p {
+    margin: 0;
+    color: #c5c5d0;
+    font-size: 17px;
+    line-height: 1.85;
+    text-align: justify;
+}
+
+/* Трейлер */
+
+.film-trailer {
+    margin-top: 30px;
+}
+
+.film-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.film-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.film-trailer-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 22px;
+    background: #ffcc4d;
+    color: #171717;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Адаптация для телефона */
+
+@media (max-width: 800px) {
+    .film-details {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .film-poster-large {
+        position: static;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .film-poster-large img {
+        height: 400px;
+    }
+
+    .film-content h1 {
+        font-size: 29px;
+    }
+
+    .film-extra-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .film-extra-row strong {
+        text-align: left;
+    }
+
+    .film-description p {
+        text-align: left;
+        font-size: 16px;
+    }
+}
+
+
+
+/* =========================================================
+   НОВОЕ ОФОРМЛЕНИЕ СТРАНИЦЫ ФИЛЬМА
+   Эти правила находятся в конце файла и переопределяют
+   старые стили только на странице film.php.
+   ========================================================= */
+
+.film-page {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 0 75px;
+}
+
+.film-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 22px 2px;
+    color: #ffcc4d;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .25s ease, transform .25s ease;
+}
+
+.film-back:hover {
+    color: #fff;
+    transform: translateX(-4px);
+}
+
+.film-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 510px;
+    padding: 54px;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 24px;
+    background-color: #191820;
+    background-size: cover;
+    background-position: center 35%;
+    box-shadow: 0 24px 65px rgba(0,0,0,.28);
+}
+
+.film-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(126,91,181,.20), transparent 35%),
+        linear-gradient(135deg, rgba(18,17,25,.28), rgba(13,13,18,.25));
+}
+
+.film-hero-inner {
+    display: grid;
+    grid-template-columns: 285px minmax(0, 1fr);
+    align-items: center;
+    gap: 54px;
+    max-width: 100%;
+}
+
+.film-poster-large {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 16px;
+    background: #25232e;
+    box-shadow: 0 22px 45px rgba(0,0,0,.5);
+    transform: rotate(-1deg);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.film-poster-large:hover {
+    transform: rotate(0) translateY(-5px);
+    box-shadow: 0 28px 55px rgba(0,0,0,.58);
+}
+
+.film-poster-large img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.film-poster-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #ffcc4d;
+    font-size: 60px;
+    background: linear-gradient(145deg, #40345f, #17171d);
+}
+
+.film-hero-content {
+    min-width: 0;
+    max-width: 690px;
+}
+
+.film-kicker {
+    display: inline-block;
+    color: #ffcc4d;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 1.5;
+}
+
+.film-hero-content h1 {
+    margin: 15px 0 22px;
+    color: #fff;
+    font-size: clamp(36px, 5vw, 54px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -.8px;
+    text-shadow: 0 3px 22px rgba(0,0,0,.3);
+}
+
+.film-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 20px;
+}
+
+.film-meta span {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 15px;
+    border: 1px solid rgba(255,204,77,.2);
+    border-radius: 30px;
+    background: rgba(255,204,77,.10);
+    color: #ffda78;
+    font-size: 14px;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+}
+
+.film-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 18px;
+    color: #ffcc4d;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.film-rating span {
+    font-size: 28px;
+}
+
+.film-rating small {
+    color: #bcb8c7;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.film-hero-note {
+    max-width: 540px;
+    margin: 2px 0 25px;
+    color: #d0ced8;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.film-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 19px;
+    border: 1px solid rgba(255,204,77,.65);
+    border-radius: 9px;
+    color: #ffcc4d;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.film-read-more:hover {
+    background: #ffcc4d;
+    color: #17171d;
+    transform: translateY(-2px);
+}
+
+.film-read-more span {
+    font-size: 18px;
+}
+
+.film-hero-bottom-line {
+    position: absolute;
+    right: 54px;
+    bottom: 0;
+    left: 54px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffcc4d, #8c6bc0, transparent);
+    opacity: .8;
+}
+
+.film-information {
+    padding: 55px 8px 0;
+}
+
+.film-section-heading {
+    margin-bottom: 23px;
+}
+
+.film-section-heading h2,
+.film-description-heading h2 {
+    margin: 8px 0 7px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.25;
+}
+
+.film-section-heading p {
+    margin: 0;
+    color: #9e9daa;
+    font-size: 15px;
+}
+
+.film-extra {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.film-extra-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    min-width: 0;
+    padding: 21px;
+    border: 1px solid #30303b;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #1d1d26, #191920);
+    transition: border-color .25s ease, transform .25s ease, background .25s ease;
+}
+
+.film-extra-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,204,77,.55);
+    background: #20202a;
+}
+
+.film-extra-icon {
+    display: flex;
+    flex: 0 0 43px;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 12px;
+    background: rgba(255,204,77,.10);
+    color: #ffcc4d;
+    font-size: 19px;
+}
+
+.film-extra-card > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.film-extra-label {
+    color: #9695a2;
+    font-size: 12px;
+    letter-spacing: .3px;
+}
+
+.film-extra-card strong {
+    color: #f4f3f7;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+/* Описание отдельно от сетки: теперь оно действительно широкое */
+.film-description {
+    margin-top: 48px;
+    padding: 34px 38px 38px;
+    border: 1px solid #30303b;
+    border-radius: 17px;
+    background:
+        radial-gradient(circle at 100% 0, rgba(104,75,151,.13), transparent 38%),
+        #191920;
+    scroll-margin-top: 30px;
+}
+
+.film-description-heading {
+    margin-bottom: 18px;
+}
+
+.film-description-heading h2 {
+    margin-bottom: 0;
+}
+
+.film-description p {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    color: #d0cfda;
+    font-size: 18px;
+    line-height: 1.95;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+.film-trailer {
+    margin-top: 50px;
+}
+
+.film-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid #353541;
+    border-radius: 16px;
+    background: #08080b;
+    box-shadow: 0 18px 45px rgba(0,0,0,.25);
+}
+
+.film-video iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.film-trailer-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    padding: 14px 22px;
+    border-radius: 9px;
+    background: #ffcc4d;
+    color: #17171d;
+    font-weight: 800;
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.film-trailer-button:hover {
+    background: #ffe08a;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 850px) {
+    .film-page {
+        padding-top: 25px;
+    }
+
+    .film-hero {
+        min-height: 0;
+        padding: 35px;
+    }
+
+    .film-hero-inner {
+        grid-template-columns: 230px minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .film-hero-content h1 {
+        font-size: 36px;
+    }
+
+    .film-information {
+        padding: 42px 0 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .film-page {
+        padding: 20px 0 45px;
+    }
+
+    .film-hero {
+        padding: 27px 21px 32px;
+        border-radius: 17px;
+        background-position: center;
+    }
+
+    .film-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .film-poster-large {
+        width: min(68%, 245px);
+        margin: 0 auto;
+    }
+
+    .film-hero-content {
+        text-align: center;
+    }
+
+    .film-hero-content h1 {
+        margin-top: 12px;
+        font-size: 32px;
+    }
+
+    .film-meta {
+        justify-content: center;
+    }
+
+    .film-hero-note {
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 15px;
+    }
+
+    .film-rating {
+        justify-content: center;
+    }
+
+    .film-hero-bottom-line {
+        right: 20px;
+        left: 20px;
+    }
+
+    .film-extra {
+        grid-template-columns: 1fr;
+    }
+
+    .film-description {
+        margin-top: 32px;
+        padding: 25px 21px;
+    }
+
+    .film-description p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    .film-section-heading h2,
+    .film-description-heading h2 {
+        font-size: 26px;
+    }
+}
+/* Новая композиция для главной страницы */
+
+.cinema-visual {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cinema-clapper {
+    width: 260px;
+    height: 230px;
+    background: linear-gradient(145deg, #30283f, #171720);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    transform: rotate(-5deg);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.clapper-top {
+    height: 43px;
+    background: #ffc94a;
+    display: flex;
+    overflow: hidden;
+}
+
+.clapper-top span {
+    flex: 1;
+    height: 100%;
+    background: #24212d;
+    transform: skew(-25deg);
+    margin: 0 7px;
+}
+
+.clapper-content {
+    height: calc(100% - 43px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cinema-play {
+    color: #ffc94a;
+    font-size: 65px;
+    margin-bottom: 5px;
+}
+
+.clapper-content h3 {
+    color: #ffffff;
+    font-size: 27px;
+    letter-spacing: 4px;
+    margin: 5px 0 10px;
+}
+
+.clapper-content p {
+    color: #b8b4c5;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.cinema-decoration {
+    position: absolute;
+    color: #ffc94a;
+    font-size: 35px;
+}
+
+.decoration-one {
+    top: 25px;
+    right: 15px;
+}
+
+.decoration-two {
+    bottom: 25px;
+    left: 10px;
+    font-size: 27px;
+}
+
+@media (max-width: 700px) {
+    .cinema-visual {
+        width: 100%;
+        height: 280px;
+    }
+
+    .cinema-clapper {
+        width: 230px;
+        height: 205px;
+    }
+}
+.hero-decoration.cinema-visual {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    width: 340px !important;
+    min-width: 300px !important;
+    height: 340px !important;
+    flex-shrink: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* БОЛЕЕ КРУПНЫЙ ТЕКСТ НА СТРАНИЦАХ ФИЛЬМОВ */
+
+body .film-page .film-content h1 {
+    font-size: 50px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 22px !important;
+}
+
+body .film-page .film-content h2 {
+    font-size: 35px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 18px !important;
+}
+
+body .film-page .film-content p {
+    font-size: 23px !important;
+    line-height: 1.9 !important;
+}
+
+body .film-page .film-meta,
+body .film-page .film-meta span {
+    font-size: 20px !important;
+}
+
+body .film-page .film-rating {
+    font-size: 27px !important;
+}
+
+body .film-page .film-extra,
+body .film-page .film-extra-row,
+body .film-page .film-extra-row span,
+body .film-page .film-extra-row strong {
+    font-size: 21px !important;
+    line-height: 1.9 !important;
+}
+
+body .film-page .film-description p {
+    font-size: 23px !important;
+    line-height: 1.9 !important;
+}
+
+body .film-page .film-back {
+    font-size: 20px !important;
+}
+
+body .film-page .film-trailer-button {
+    font-size: 20px !important;
+}
+/* ==============================
+   ОТЗЫВЫ И ОЦЕНКИ ФИЛЬМОВ
+============================== */
+
+.reviews-section {
+    margin-top: 75px;
+    padding-top: 45px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reviews-summary {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    background: #191920;
+    border: 1px solid rgba(255, 204, 77, 0.2);
+    border-radius: 16px;
+}
+
+.reviews-summary-number {
+    color: #ffcc4d;
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.reviews-summary-number span {
+    font-size: 19px;
+    color: #aaa;
+}
+
+.reviews-stars,
+.review-card-stars {
+    display: flex;
+    gap: 4px;
+}
+
+.reviews-stars span,
+.review-card-stars span {
+    color: #555;
+    font-size: 23px;
+}
+
+.reviews-stars span.active,
+.review-card-stars span.active {
+    color: #ffcc4d;
+}
+
+.reviews-summary-info p {
+    color: #aaa;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* Форма */
+
+.review-form-card {
+    padding: 30px;
+    margin-bottom: 40px;
+    background: #191920;
+    border: 1px solid #303039;
+    border-radius: 16px;
+}
+
+.review-form-card h3 {
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.review-label {
+    display: block;
+    color: #ddd;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 20px 0 12px;
+}
+
+.review-rating-input {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.review-rating-input input {
+    display: none;
+}
+
+.review-rating-input label {
+    color: #555;
+    font-size: 38px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.review-rating-input label:hover,
+.review-rating-input label:hover ~ label,
+.review-rating-input input:checked ~ label {
+    color: #ffcc4d;
+}
+
+.review-form-card textarea {
+    width: 100%;
+    min-height: 140px;
+    padding: 17px;
+    resize: vertical;
+    background: #101014;
+    border: 1px solid #3a3a45;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.7;
+    outline: none;
+    font-family: inherit;
+}
+
+.review-form-card textarea:focus {
+    border-color: #ffcc4d;
+}
+
+.review-form-card textarea::placeholder {
+    color: #777;
+}
+
+.review-submit {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 27px;
+    background: #ffcc4d;
+    color: #171717;
+    border: none;
+    border-radius: 9px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.review-submit:hover {
+    background: #ffda76;
+    transform: translateY(-2px);
+}
+
+/* Сообщения */
+
+.review-message {
+    padding: 13px 17px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.review-message.error {
+    background: rgba(220, 60, 60, 0.12);
+    border: 1px solid rgba(220, 60, 60, 0.35);
+    color: #ff8585;
+}
+
+.review-login-notice {
+    padding: 25px;
+    margin-bottom: 35px;
+    background: #191920;
+    border-radius: 12px;
+    color: #ccc;
+    font-size: 18px;
+}
+
+.review-login-notice a {
+    color: #ffcc4d;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.review-login-notice a:hover {
+    text-decoration: underline;
+}
+
+/* Список отзывов */
+
+.reviews-list {
+    margin-top: 35px;
+}
+
+.reviews-list > h3 {
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 22px;
+}
+
+.review-card {
+    padding: 25px;
+    margin-bottom: 18px;
+    background: #191920;
+    border: 1px solid #303039;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.review-card:hover {
+    border-color: rgba(255, 204, 77, 0.4);
+}
+
+.review-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.review-avatar {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(255, 204, 77, 0.15);
+    border: 1px solid rgba(255, 204, 77, 0.35);
+    border-radius: 50%;
+    color: #ffcc4d;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.review-author strong {
+    display: block;
+    color: #fff;
+    font-size: 19px;
+    margin-bottom: 4px;
+}
+
+.review-author span {
+    color: #999;
+    font-size: 14px;
+}
+
+.review-card-text {
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.review-own-label {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ffcc4d;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.reviews-empty {
+    padding: 45px 20px;
+    text-align: center;
+    background: #191920;
+    border: 1px dashed #444;
+    border-radius: 14px;
+}
+
+.reviews-empty > span {
+    color: #ffcc4d;
+    font-size: 42px;
+}
+
+.reviews-empty h3 {
+    color: #fff;
+    font-size: 24px;
+    margin: 12px 0;
+}
+
+.reviews-empty p {
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.film-user-rating {
+    margin-top: 15px;
+    color: #ddd;
+    font-size: 17px;
+}
+
+.film-user-rating > span {
+    color: #ffcc4d;
+    font-size: 23px;
+}
+
+.film-user-rating strong {
+    color: #ffcc4d;
+}
+
+.film-user-rating small {
+    color: #aaa;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .reviews-summary {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .reviews-summary-number {
+        font-size: 38px;
+    }
+
+    .review-form-card {
+        padding: 20px;
+    }
+
+    .review-card {
+        padding: 18px;
+    }
+
+    .review-card-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .review-card-text {
+        font-size: 16px;
+    }
+}
+
+/* ======================================================
+   ОБНОВЛЕНИЕ ДИЗАЙНА ГЛАВНОЙ СТРАНИЦЫ КИНОМИР
+   Центрирование, аккуратные отступы и кинематографичный вид
+====================================================== */
+
+/* Основная область главной страницы */
+main:has(.hero) {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 34px clamp(22px, 5.5vw, 78px) 65px;
+}
+
+/* Верхний баннер */
+main:has(.hero) .hero {
+    width: 100%;
+    min-height: 440px;
+    padding: clamp(34px, 5vw, 68px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 22px;
+    background:
+        radial-gradient(ellipse at 82% 18%, rgba(255, 204, 77, 0.16), transparent 34%),
+        radial-gradient(ellipse at 12% 90%, rgba(92, 65, 130, 0.30), transparent 42%),
+        linear-gradient(125deg, #24212d 0%, #191820 58%, #121217 100%);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.22);
+}
+
+main:has(.hero) .hero-content {
+    max-width: 650px;
+    flex: 1 1 500px;
+}
+
+main:has(.hero) .hero .hero-content h2 {
+    color: #fff;
+    letter-spacing: -1.2px;
+    text-wrap: balance;
+}
+
+main:has(.hero) .hero .hero-content p {
+    max-width: 560px;
+    color: #c9c7d1;
+}
+
+main:has(.hero) .hero .btn-primary {
+    padding: 15px 27px;
+    border-radius: 9px;
+    box-shadow: 0 8px 22px rgba(255, 204, 77, 0.16);
+}
+
+/* Декоративная кинолента не должна сжимать текст */
+main:has(.hero) .hero-decoration.cinema-film-visual {
+    flex: 0 1 390px;
+}
+
+/* Общая ширина и центрирование разделов */
+main:has(.hero) .home-films-section,
+main:has(.hero) .genres-section,
+main:has(.hero) .about-banner {
+    width: 100%;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+main:has(.hero) .home-films-section {
+    padding: 66px 0 10px;
+}
+
+main:has(.hero) .home-films-heading {
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+
+main:has(.hero) .home-films-heading h2,
+main:has(.hero) .section-heading h2 {
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+/* Карточки фильмов */
+main:has(.hero) .home-film-card {
+    flex-basis: 190px;
+}
+
+main:has(.hero) .home-film-poster {
+    height: 275px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: #1c1b23;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+main:has(.hero) .home-film-info h3 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+main:has(.hero) .home-film-info p {
+    font-size: 14px;
+}
+
+/* Стрелки ленты */
+main:has(.hero) .home-films-arrow {
+    background: rgba(35, 33, 42, 0.9);
+    border-color: rgba(255, 204, 77, 0.38);
+}
+
+/* Жанры */
+main:has(.hero) .genres-section {
+    margin-top: 65px;
+}
+
+main:has(.hero) .genres-section .section-heading {
+    margin-bottom: 25px;
+}
+
+main:has(.hero) .genre-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+main:has(.hero) .genre-card {
+    min-height: 165px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: linear-gradient(145deg, #20202a, #191920);
+}
+
+main:has(.hero) .genre-card h3 {
+    font-size: 20px;
+}
+
+main:has(.hero) .genre-card p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Блок о проекте */
+main:has(.hero) .about-banner {
+    margin-top: 65px;
+    padding: clamp(25px, 4vw, 45px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 95% 10%, rgba(255, 204, 77, 0.08), transparent 32%),
+        linear-gradient(135deg, #20202a, #191920);
+}
+
+main:has(.hero) .about-banner h2 {
+    color: #fff;
+}
+
+/* Адаптация */
+@media (max-width: 900px) {
+    main:has(.hero) {
+        padding: 25px 4% 50px;
+    }
+
+    main:has(.hero) .hero {
+        min-height: 0;
+        padding: 35px 28px;
+    }
+
+    main:has(.hero) .hero .hero-content h2 {
+        font-size: 40px !important;
+    }
+
+    main:has(.hero) .hero .hero-content p {
+        font-size: 17px !important;
+    }
+}
+
+@media (max-width: 700px) {
+    main:has(.hero) {
+        padding: 18px 4% 40px;
+    }
+
+    main:has(.hero) .hero {
+        padding: 30px 22px;
+        border-radius: 16px;
+    }
+
+    main:has(.hero) .hero .hero-content h2 {
+        font-size: 34px !important;
+    }
+
+    main:has(.hero) .hero .hero-content p {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+    }
+
+    main:has(.hero) .home-films-section {
+        padding-top: 45px;
+    }
+
+    main:has(.hero) .home-films-heading {
+        align-items: flex-start;
+    }
+
+    main:has(.hero) .genre-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main:has(.hero) .genres-section,
+    main:has(.hero) .about-banner {
+        margin-top: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    main:has(.hero) .home-films-heading h2 {
+        font-size: 22px;
+    }
+
+    main:has(.hero) .home-film-card {
+        flex-basis: 145px;
+    }
+
+    main:has(.hero) .home-film-poster {
+        height: 210px;
+    }
+}
+
+/* ======================================================
+   ФИНАЛЬНОЕ ОФОРМЛЕНИЕ ГЛАВНОЙ СТРАНИЦЫ «КИНОМИР»
+   ====================================================== */
+
+main:has(.hero) {
+    isolation: isolate;
+}
+
+main:has(.hero) .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(25px, 4vw, 60px);
+    overflow: hidden;
+    min-height: 470px;
+    padding: clamp(35px, 5vw, 70px);
+    background-color: #191820;
+}
+
+main:has(.hero) .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(16,16,20,.18), rgba(16,16,20,.02) 58%, rgba(16,16,20,.28));
+}
+
+main:has(.hero) .hero-content,
+main:has(.hero) .hero-decoration,
+main:has(.hero) .hero-poster,
+main:has(.hero) .hero-image {
+    position: relative;
+    z-index: 1;
+}
+
+main:has(.hero) .hero-content h2 {
+    max-width: 760px;
+    margin: 0 0 22px;
+    font-size: clamp(38px, 5vw, 66px) !important;
+    line-height: 1.08;
+    font-weight: 800;
+}
+
+main:has(.hero) .hero-content p {
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+main:has(.hero) .hero-content .btn-primary,
+main:has(.hero) .hero .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    margin-top: 12px;
+    padding: 14px 28px;
+    border: 0;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #ffda78, #ffbd35);
+    color: #191820;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+main:has(.hero) .hero-content .btn-primary:hover,
+main:has(.hero) .hero .btn-primary:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.05);
+    box-shadow: 0 12px 28px rgba(255, 204, 77, .22);
+}
+
+main:has(.hero) .home-films-section,
+main:has(.hero) .genres-section,
+main:has(.hero) .about-banner {
+    position: relative;
+}
+
+main:has(.hero) .home-films-heading h2,
+main:has(.hero) .section-heading h2 {
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 800;
+}
+
+main:has(.hero) .home-film-card {
+    overflow: hidden;
+    border-radius: 14px;
+    transition: transform .28s ease;
+}
+
+main:has(.hero) .home-film-card:hover {
+    transform: translateY(-6px);
+}
+
+main:has(.hero) .home-film-poster {
+    position: relative;
+    overflow: hidden;
+    border-radius: 13px;
+    background: #20202a;
+}
+
+main:has(.hero) .home-film-poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s ease;
+}
+
+main:has(.hero) .home-film-card:hover .home-film-poster img {
+    transform: scale(1.055);
+}
+
+main:has(.hero) .home-film-info {
+    padding: 12px 3px 5px;
+}
+
+main:has(.hero) .home-film-info h3 {
+    margin-bottom: 5px;
+    color: #f5f5f7;
+    line-height: 1.4;
+}
+
+main:has(.hero) .home-film-info p {
+    color: #a9a7b2;
+    line-height: 1.5;
+}
+
+main:has(.hero) .home-films-arrow {
+    width: 43px;
+    height: 43px;
+    border: 1px solid rgba(255, 204, 77, .35);
+    border-radius: 50%;
+    color: #ffcc4d;
+    transition: background .2s ease, transform .2s ease;
+}
+
+main:has(.hero) .home-films-arrow:hover {
+    transform: scale(1.06);
+    background: rgba(255, 204, 77, .13);
+}
+
+main:has(.hero) .genre-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+main:has(.hero) .genre-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 204, 77, .5);
+    background: linear-gradient(145deg, #292633, #1b1a22);
+}
+
+main:has(.hero) .about-banner {
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .16);
+}
+
+/* Единое оформление кнопок и полей на остальных страницах */
+button,
+input,
+select,
+textarea {
+    font-family: Arial, sans-serif;
+}
+
+button,
+input[type="submit"] {
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+/* Страница фильма: блок рекомендаций и карточки */
+.similar-films,
+.related-films,
+.recommended-films {
+    margin-top: 55px;
+}
+
+.similar-films h2,
+.related-films h2,
+.recommended-films h2 {
+    margin-bottom: 22px;
+    color: #f5f5f7;
+    font-size: 27px;
+}
+
+.similar-films .movie-card,
+.related-films .movie-card,
+.recommended-films .movie-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 13px;
+    background: #191920;
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+.similar-films .movie-card:hover,
+.related-films .movie-card:hover,
+.recommended-films .movie-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 204, 77, .45);
+}
+
+/* Аккуратная адаптация */
+@media (max-width: 900px) {
+    main:has(.hero) .hero {
+        gap: 25px;
+        min-height: 390px;
+    }
+}
+
+@media (max-width: 700px) {
+    main:has(.hero) .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: 0;
+    }
+
+    main:has(.hero) .hero-content {
+        width: 100%;
+        max-width: none;
+    }
+
+    main:has(.hero) .hero-content h2 {
+        font-size: 35px !important;
+    }
+
+    main:has(.hero) .home-films-section {
+        padding-top: 42px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+/* =========================================
+   УВЕЛИЧЕНИЕ ШИРИНЫ СТРАНИЦ КИНОМИР
+========================================= */
+
+main {
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(24px, 5vw, 76px);
+    padding-right: clamp(24px, 5vw, 76px);
+}
+
+/* Основные страницы */
+
+.catalog-page,
+.genres-page,
+.about-page,
+.contacts-page {
+    width: 100%;
+    max-width: 1450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Карточки фильмов */
+
+.catalog-grid {
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.catalog-grid.list-view {
+    max-width: 100% !important;
+}
+
+/* Страница жанров */
+
+.genres-catalog {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Страница «О нас» */
+
+.about-hero {
+    width: 100%;
+}
+
+.about-intro {
+    max-width: 1000px;
+}
+
+/* Большие мониторы */
+
+@media (min-width: 1500px) {
+    .catalog-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 28px;
+    }
+}
+
+/* Ноутбуки и небольшие экраны */
+
+@media (max-width: 1100px) {
+    main {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Планшеты */
+
+@media (max-width: 750px) {
+    main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .genres-catalog {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Телефоны */
+
+@media (max-width: 480px) {
+    main {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .catalog-grid {
+        gap: 12px;
+    }
+}
+
+/* =========================================
+   РАСШИРЕННЫЙ КАТАЛОГ И КАРТОЧКИ ФИЛЬМОВ
+========================================= */
+
+main:has(.catalog-page) {
+    max-width: 1600px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.catalog-grid {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    margin: 25px auto;
+}
+
+.catalog-grid .movie-card {
+    width: 100%;
+    min-width: 0;
+}
+
+.catalog-grid .movie-poster {
+    aspect-ratio: 2 / 3;
+    height: auto !important;
+}
+
+.catalog-grid .movie-info {
+    padding: 17px !important;
+}
+
+.catalog-grid .movie-info h3 {
+    font-size: 19px !important;
+}
+
+.catalog-grid .movie-info p {
+    font-size: 15px !important;
+}
+
+/* Планшеты */
+@media (max-width: 1050px) {
+    .catalog-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 18px !important;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 650px) {
+    main:has(.catalog-page) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 13px !important;
+    }
+
+    .catalog-grid .movie-info {
+        padding: 12px !important;
+    }
+
+    .catalog-grid .movie-info h3 {
+        font-size: 15px !important;
+    }
+}
+
+/* Поиск в шапке КиноМир */
+.km-header-search,
+.km-mobile-search {
+    box-sizing: border-box;
+}
+
+.km-header-search input,
+.km-mobile-search input {
+    box-shadow: none !important;
+}
+
+.km-header-search input:focus,
+.km-mobile-search input:focus {
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+@media (max-width: 940px) {
+    .km-header-search {
+        display: none !important;
+    }
+}
+
+
+/* ==========================================
+   ГЛАВНАЯ КИНОМИР — ФИНАЛЬНЫЕ ШТРИХИ
+========================================== */
+main:has(.home-hero) { isolation: isolate; }
+main:has(.home-hero) .home-genre-card,
+main:has(.home-hero) .home-film-card { -webkit-tap-highlight-color: transparent; }
+main:has(.home-hero) .home-genre-card:focus-visible,
+main:has(.home-hero) .home-film-card:focus-visible,
+main:has(.home-hero) .hero-watch-button:focus-visible,
+main:has(.home-hero) .hero-catalog-button:focus-visible {
+    outline: 2px solid #ffcc4d;
+    outline-offset: 4px;
+}
+
+
+/* Дополнительная настройка страницы фильма */
+.film-page {
+    max-width: 1180px;
+    padding: 38px 24px 85px;
+}
+.film-hero {
+    min-height: 500px;
+    padding: 48px;
+    background-position: center 32%;
+}
+.film-hero-inner {
+    grid-template-columns: minmax(230px, 285px) minmax(0, 1fr);
+    gap: clamp(30px, 4vw, 54px);
+}
+.film-information {
+    padding: 58px 8px 0;
+}
+.film-extra-card {
+    min-height: 104px;
+}
+.film-description {
+    margin-top: 42px;
+}
+.film-trailer {
+    margin-top: 52px;
+}
+.reviews-section {
+    margin-top: 68px;
+    padding-top: 42px;
+}
+.review-form-card,
+.reviews-summary,
+.review-card {
+    box-shadow: 0 14px 35px rgba(0,0,0,.16);
+}
+@media (max-width: 850px) {
+    .film-page { padding: 28px 20px 65px; }
+    .film-hero { padding: 32px; }
+    .film-hero-inner { grid-template-columns: 220px minmax(0,1fr); gap: 28px; }
+}
+@media (max-width: 650px) {
+    .film-page { padding: 22px 14px 50px; }
+    .film-hero { min-height: 0; padding: 22px; border-radius: 18px; }
+    .film-hero-inner { grid-template-columns: 1fr; gap: 26px; }
+    .film-poster-large { width: min(220px, 72%); margin: 0 auto; }
+    .film-hero-content { max-width: none; }
+    .film-hero-content h1 { font-size: 34px; }
+    .film-extra { grid-template-columns: 1fr; }
+    .film-description { padding: 25px 22px; margin-top: 30px; }
+    .film-description p { font-size: 16px; line-height: 1.8; }
+    .reviews-summary { align-items: flex-start; flex-wrap: wrap; padding: 20px; }
+    .review-form-card { padding: 22px; }
+}
+
+
+
+/* =========================================================
+   CINEMATIC FILM PAGE — новая визуальная концепция
+   ========================================================= */
+body:has(.film-page) {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(112,75,42,.13), transparent 42%),
+      #0b0b0f !important;
+}
+body:has(.film-page) main {
+    background: transparent !important;
+}
+.film-page {
+    width: min(1440px, 100%) !important;
+    max-width: 1440px !important;
+    margin: 0 auto !important;
+    padding: 26px clamp(18px, 4vw, 62px) 110px !important;
+    color: #f5f1e9 !important;
+}
+.film-back {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 22px 2px !important;
+    color: rgba(245,241,233,.68) !important;
+    font-size: 13px !important;
+    font-weight: 700;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    transition: color .25s ease, transform .25s ease;
+}
+.film-back:hover { color: #e8bd70 !important; transform: translateX(-4px); }
+.film-hero {
+    position: relative !important;
+    isolation: isolate;
+    min-height: 660px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    padding: clamp(38px, 5vw, 76px) !important;
+    border: 1px solid rgba(255,255,255,.09) !important;
+    border-radius: 8px 8px 34px 8px !important;
+    background-color: #17151a !important;
+    background-size: cover !important;
+    background-position: center 28% !important;
+    box-shadow: 0 35px 100px rgba(0,0,0,.48) !important;
+}
+.film-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(90deg, rgba(9,9,13,.98) 0%, rgba(9,9,13,.91) 37%, rgba(9,9,13,.62) 70%, rgba(9,9,13,.40) 100%),
+      linear-gradient(0deg, #0b0b0f 0%, transparent 42%, rgba(0,0,0,.12) 100%);
+    backdrop-filter: saturate(.72);
+}
+.film-hero::after {
+    content: "CINEMA  /  КИНОМИР";
+    position: absolute;
+    right: 34px;
+    top: 30px;
+    color: rgba(255,255,255,.36);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .28em;
+}
+.film-hero-inner {
+    position: relative !important;
+    z-index: 1;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: minmax(250px, 330px) minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: clamp(38px, 6vw, 88px) !important;
+}
+.film-poster-large {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 330px !important;
+    aspect-ratio: 2 / 3 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    border-radius: 5px !important;
+    background: #201d22;
+    box-shadow: 18px 24px 55px rgba(0,0,0,.62), 0 0 0 1px rgba(255,255,255,.18) !important;
+    transform: rotate(-1.7deg) !important;
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+}
+.film-poster-large:hover {
+    transform: rotate(0) translateY(-8px) scale(1.025) !important;
+    box-shadow: 22px 35px 70px rgba(0,0,0,.7), 0 0 0 1px rgba(232,189,112,.5) !important;
+}
+.film-poster-large::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(145deg, rgba(255,255,255,.16), transparent 24%, transparent 70%, rgba(0,0,0,.3));
+}
+.film-poster-large img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+}
+.film-hero-content { max-width: 760px !important; }
+.film-hero-content .film-kicker,
+.film-section-heading .film-kicker,
+.film-description-heading .film-kicker {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 12px;
+    color: #e8bd70 !important;
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    letter-spacing: .28em !important;
+    text-transform: uppercase;
+}
+.film-hero-content .film-kicker::before {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: #e8bd70;
+}
+.film-hero-content h1 {
+    max-width: 850px;
+    margin: 20px 0 22px !important;
+    color: #fffaf1 !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: clamp(46px, 6.3vw, 86px) !important;
+    font-weight: 500 !important;
+    letter-spacing: -.045em !important;
+    line-height: .99 !important;
+    text-wrap: balance;
+    text-shadow: 0 8px 32px rgba(0,0,0,.5);
+}
+.film-meta {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 !important;
+    margin: 0 0 22px !important;
+    color: rgba(255,255,255,.78) !important;
+}
+.film-meta span {
+    padding: 0 16px !important;
+    border-left: 1px solid rgba(255,255,255,.26);
+    color: inherit !important;
+    font-size: 14px !important;
+    letter-spacing: .04em;
+}
+.film-meta span:first-child { padding-left: 0 !important; border-left: 0; }
+.film-rating {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 14px !important;
+    padding: 8px 14px !important;
+    border: 1px solid rgba(232,189,112,.42) !important;
+    border-radius: 3px !important;
+    background: rgba(232,189,112,.10) !important;
+    color: #f3cf8f !important;
+    font-size: 20px !important;
+}
+.film-user-rating { color: rgba(255,255,255,.68) !important; font-size: 13px !important; }
+.film-user-rating strong { color: #f3cf8f !important; }
+.film-hero-note {
+    max-width: 580px !important;
+    margin: 24px 0 20px !important;
+    color: rgba(255,255,255,.78) !important;
+    font-size: 16px !important;
+    line-height: 1.85 !important;
+}
+.film-read-more {
+    display: inline-flex !important;
+    gap: 12px;
+    align-items: center;
+    margin: 0 0 24px !important;
+    color: #e8bd70 !important;
+    font-size: 12px !important;
+    font-weight: 900;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+}
+.film-read-more span { font-size: 19px; transition: transform .2s ease; }
+.film-read-more:hover span { transform: translateY(4px); }
+.film-actions {
+    max-width: 720px !important;
+    margin: 10px 0 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+.film-action-buttons { gap: 12px !important; }
+.film-action-button {
+    min-height: 49px !important;
+    padding: 13px 20px !important;
+    border-radius: 3px !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+.watchlist-button { background: #e8bd70 !important; border-color: #e8bd70 !important; color: #17120c !important; }
+.watchlist-button:hover:not(:disabled) { background: #f5d79e !important; border-color: #f5d79e !important; }
+.watched-button { background: rgba(255,255,255,.08) !important; border-color: rgba(255,255,255,.3) !important; color: #fff !important; }
+.watched-button:hover:not(:disabled) { background: rgba(255,255,255,.16) !important; border-color: #e8bd70 !important; }
+.film-actions-hint { color: rgba(255,255,255,.48) !important; font-size: 11px !important; }
+.film-hero-bottom-line { display: none !important; }
+
+/* Секции ниже hero — редакционный журнальный стиль */
+.film-information {
+    padding: 94px 0 0 !important;
+}
+.film-section-heading { margin: 0 0 30px !important; }
+.film-section-heading h2,
+.film-description-heading h2 {
+    margin: 12px 0 10px !important;
+    color: #fffaf1 !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: clamp(32px, 4vw, 48px) !important;
+    font-weight: 500 !important;
+    letter-spacing: -.025em;
+}
+.film-section-heading p { color: rgba(255,255,255,.48) !important; font-size: 14px !important; }
+.film-extra {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+    gap: 1px !important;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.09) !important;
+    border-radius: 5px !important;
+    background: rgba(255,255,255,.09) !important;
+}
+.film-extra-card {
+    display: flex !important;
+    align-items: center;
+    gap: 17px;
+    min-height: 112px !important;
+    padding: 23px 25px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #141419 !important;
+    transition: background .25s ease;
+}
+.film-extra-card:hover { background: #1d1b20 !important; }
+.film-extra-icon { color: #e8bd70 !important; font-size: 24px !important; }
+.film-extra-label { display: block; margin-bottom: 7px; color: rgba(255,255,255,.42) !important; font-size: 10px !important; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.film-extra-card strong { color: #f5f1e9 !important; font-size: 15px !important; font-weight: 650; line-height: 1.45; }
+.film-description {
+    position: relative;
+    margin: 58px 0 0 !important;
+    padding: clamp(30px, 5vw, 62px) !important;
+    overflow: hidden;
+    border: 1px solid rgba(232,189,112,.2) !important;
+    border-radius: 5px !important;
+    background: linear-gradient(120deg, rgba(232,189,112,.08), transparent 55%), #141419 !important;
+}
+.film-description::after {
+    content: "“";
+    position: absolute;
+    right: 35px;
+    top: -50px;
+    color: rgba(232,189,112,.09);
+    font-family: Georgia,serif;
+    font-size: 260px;
+    line-height: 1;
+    pointer-events: none;
+}
+.film-description p {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 22px 0 0 !important;
+    color: rgba(255,255,255,.76) !important;
+    font-size: 17px !important;
+    line-height: 2 !important;
+}
+.film-trailer { margin: 78px 0 0 !important; }
+.film-video {
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.12) !important;
+    border-radius: 7px !important;
+    background: #000;
+    box-shadow: 0 25px 65px rgba(0,0,0,.35);
+}
+.film-video iframe { display: block; width: 100%; aspect-ratio: 16/9; border: 0; }
+.film-trailer-button { display: inline-flex; margin-top: 25px; padding: 16px 23px; border-radius: 3px; background: #e8bd70; color: #17120c !important; font-weight: 900; text-decoration: none; }
+.reviews-section {
+    margin: 88px 0 0 !important;
+    padding: 65px 0 0 !important;
+    border-top: 1px solid rgba(255,255,255,.12) !important;
+}
+.reviews-summary {
+    max-width: 420px;
+    border: 1px solid rgba(232,189,112,.25) !important;
+    border-radius: 5px !important;
+    background: linear-gradient(120deg, rgba(232,189,112,.09), transparent), #141419 !important;
+}
+.reviews-summary-number { color: #e8bd70 !important; font-family: Georgia,serif; font-size: 58px !important; }
+.review-form-card, .review-card {
+    border: 1px solid rgba(255,255,255,.1) !important;
+    border-radius: 5px !important;
+    background: #141419 !important;
+}
+
+@media (max-width: 900px) {
+    .film-hero { min-height: 0 !important; }
+    .film-hero-inner { grid-template-columns: minmax(190px, 250px) minmax(0,1fr) !important; gap: 34px !important; }
+    .film-poster-large { max-width: 250px !important; }
+    .film-extra { grid-template-columns: repeat(2,minmax(0,1fr)) !important; }
+}
+@media (max-width: 650px) {
+    .film-page { padding: 18px 14px 65px !important; }
+    .film-hero { padding: 34px 23px !important; border-radius: 5px 5px 22px 5px !important; }
+    .film-hero::after { right: 18px; top: 17px; font-size: 8px; }
+    .film-hero-inner { grid-template-columns: 1fr !important; gap: 30px !important; }
+    .film-poster-large { width: min(220px,72%) !important; margin: 0 auto !important; }
+    .film-hero-content { text-align: center !important; }
+    .film-hero-content .film-kicker { justify-content: center; }
+    .film-hero-content h1 { font-size: clamp(38px,12vw,54px) !important; }
+    .film-meta { justify-content: center !important; }
+    .film-meta span { padding: 0 9px !important; font-size: 12px !important; }
+    .film-rating { margin-left: auto !important; margin-right: auto !important; }
+    .film-user-rating { text-align: center; }
+    .film-hero-note { font-size: 14px !important; }
+    .film-action-buttons { flex-direction: column !important; align-items: stretch !important; }
+    .film-action-buttons form, .film-action-button { width: 100% !important; }
+    .film-information { padding-top: 62px !important; }
+    .film-extra { grid-template-columns: 1fr !important; }
+    .film-extra-card { min-height: 88px !important; }
+    .film-description { margin-top: 38px !important; padding: 28px 22px !important; }
+    .film-description p { font-size: 15px !important; line-height: 1.85 !important; }
+    .film-trailer { margin-top: 55px !important; }
+    .reviews-section { margin-top: 60px !important; padding-top: 42px !important; }
+}
+
+
+
+/* ФОНОВОЕ ВИДЕО: исправленное позиционирование */
+.film-hero {
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
+}
+.film-hero-video {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+}
+.film-hero-video iframe {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 177.78% !important;
+    height: 177.78% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    border: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    opacity: .82 !important;
+    pointer-events: none !important;
+}
+.film-hero::before {
+    z-index: 1 !important;
+    pointer-events: none !important;
+    background:
+        linear-gradient(90deg,
+            rgba(8,8,12,.94) 0%,
+            rgba(8,8,12,.84) 34%,
+            rgba(8,8,12,.58) 68%,
+            rgba(8,8,12,.42) 100%),
+        linear-gradient(0deg,
+            rgba(8,8,12,.94) 0%,
+            rgba(8,8,12,.12) 55%,
+            rgba(8,8,12,.18) 100%) !important;
+}
+.film-hero-inner {
+    position: relative !important;
+    z-index: 2 !important;
+}
+@media (max-width: 650px) {
+    .film-hero-video iframe {
+        width: 260% !important;
+        height: 260% !important;
+        opacity: .62 !important;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .film-hero-video { display: none !important; }
+}
